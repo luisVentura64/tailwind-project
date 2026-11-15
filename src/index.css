@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer components {
   .mi-boton-global {
@@ -16,4 +17,3 @@
     background-color: #4338ca;
   }
 }
-          <Flex />

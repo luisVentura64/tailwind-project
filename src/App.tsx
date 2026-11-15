@@ -1,16 +1,27 @@
+import { useState } from 'react'
 import './App.css'
 import { Flex } from './components/Flex'
 import { Form } from './components/Form'
 import { Grid } from './components/Grid'
-import  Boton  from './components/boton'
+import Boton from './components/boton'
 function App() {
+  const [darkMode, setDarkMode] = useState(false)
+
   return (
-    <>
+    <div className={darkMode ? 'app dark' : 'app'}>
       <nav className="navigation">
         <a href="#app">App</a>
         <a href="#form">Form</a>
         <a href="#flex">Flex</a>
         <a href="#grid">Grid</a>
+        <button
+          className="theme-toggle"
+          type="button"
+          aria-pressed={darkMode}
+          onClick={() => setDarkMode(!darkMode)}
+        >
+          {darkMode ? 'Modo claro' : 'Modo oscuro'}
+        </button>
       </nav>
 
       <main>
@@ -44,7 +55,7 @@ function App() {
           <Grid />
         </section>
       </main>
-    </>
+    </div>
   )
 }
 

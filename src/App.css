@@ -1,9 +1,36 @@
+.app {
+  min-height: 100vh;
+  color: #111827;
+  background: #fff;
+  transition: color 150ms ease, background-color 150ms ease;
+}
+
+.app.dark {
+  color: #f3f4f6;
+  background: #111827;
+}
+
 .navigation {
   display: flex;
+  align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 24px;
   padding: 16px;
   background: #e5e7eb;
+}
+
+.theme-toggle {
+  border: 1px solid #1d4ed8;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #1d4ed8;
+  background: transparent;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: #dbeafe;
 }
 
 .navigation a {
@@ -30,6 +57,41 @@
 .example-section h2 {
   margin: 0 0 20px;
   color: #111827;
+}
+
+.dark .navigation {
+  background: #1f2937;
+}
+
+.dark .navigation a,
+.dark .theme-toggle {
+  color: #bfdbfe;
+}
+
+.dark .theme-toggle {
+  border-color: #60a5fa;
+}
+
+.dark .theme-toggle:hover {
+  background: #374151;
+}
+
+.dark .example-section + .example-section {
+  border-color: #374151;
+}
+
+.dark .example-section h2 {
+  color: #f3f4f6;
+}
+
+.dark .basic-container,
+.dark .flex-example,
+.dark .grid-item {
+  background: #374151;
+}
+
+.dark .flex-example p {
+  color: #6ee7b7;
 }
 
 .send-button,
